@@ -1,12 +1,11 @@
 # Health Check App
 
 ## Overview
-Health Check management system を Spring Boot と MyBatis　で開発します。
+Health Check management system を Spring Boot と MyBatis　で開発する。
 
 ## Features
- - Login
+ - Login & Logout
  - Health check List
- - Logout
  - Health check Detail
  - Health check record registration
  - Health check record update
