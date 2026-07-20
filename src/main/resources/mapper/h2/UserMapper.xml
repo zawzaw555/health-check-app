@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mapper と xmlのマッピング -->
+<mapper namespace="com.zawzaw.healthcheck.repository.UserMapper">
+    <!-- SQLを書く場所 -->
+    <!-- マッピング定義 -->
+    <resultMap type="com.zawzaw.healthcheck.model.Muser" id="user">
+	<id column="user_id" property="userId" />
+    <result column="password" property="password" />
+    <result column="user_name" property="userName" />
+    </resultMap>
+	
+	<!-- ユーザー　１件登録 -->
+	<insert id="insertUser">
+		INSERT INTO app_user(
+			user_id,
+			password,
+			user_name
+		)
+			VALUES (
+				#{userId},
+				#{password},
+				#{userName}
+			)
+	</insert>
+	<!-- ユーザー１件検索 -->
+	<select id="findUserById" resultMap="user">
+		SELECT * FROM 
+			app_user 
+		WHERE 
+			user_id = #{userId}
+	</select>
+</mapper>

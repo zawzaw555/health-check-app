@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zawzaw.healthcheck.repository.HealthCheckMapper">
+    <!-- SQLを書く場所 -->
+    <resultMap type="com.zawzaw.healthcheck.model.HealthCheck" id="healthCheckMap">
+    	<id
+    		column="health_check_id"
+    		property="healthCheckId"/>
+    	<result
+    		column="user_id"
+    		property="userId"/>
+    	<result
+    		column="check_date"
+    		property="checkDate"/>
+    	<result
+    		column="result"
+    		property="result"/>
+    	<result
+    		column="bmi"
+    		property="bmi"/>
+    	<result
+    		column="height"
+    		property="height"/>
+    	<result
+    		column="weight"
+    		property="weight"/>
+    	<result
+    		column="systolic_blood_pressure"
+    		property="systolicBloodPressure"/>
+    	<result
+    		column="diastolic_blood_pressure"
+    		property="diastolicBloodPressure"/>
+    </resultMap>
+    
+    <select 
+    	id="selectHealthCheckList"
+    	resultMap="healthCheckMap">
+    	SELECT
+    		health_check_id,
+    		user_id,
+    		check_date,
+    		result,
+    		bmi,
+    		height,
+    		weight,
+    		systolic_blood_pressure,
+    		diastolic_blood_pressure
+    		FROM
+    			health_check
+    		WHERE
+    			user_id = #{userId}
+    		ORDER BY
+    			check_date DESC
+    </select>
+    
+    <select id="selectHealthCheckById"
+        resultMap="healthCheckMap">
+
+    SELECT
+        health_check_id,
+        user_id,
+        check_date,
+        result,
+        bmi,
+        height,
+        weight,
+        systolic_blood_pressure,
+        diastolic_blood_pressure
+    FROM
+        health_check
+    WHERE
+        health_check_id = #{healthCheckId}
+
+</select>
+</mapper>

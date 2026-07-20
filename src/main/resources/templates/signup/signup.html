@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.8/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/layout.css}">
+<!-- JS -->
+<script th:src="@{/webjars/bootstrap/5.3.8/js/bootstrap.bundle.min.js}" defer></script>
+<title>ログイン</title>
+</head>
+<body>
+	<div class="login-wrapper">
+		<div class="card col-4 bg-light rounded-4">
+			<div class="cart-body m-4">
+			<form th:action="@{/signup/signup}" method="post" th:object="${signupForm}">
+				<h2>新規登録</h2>
+				<!-- ユーザーID -->
+				<div class="form-group label mt-4">
+					<label class="px-2 fs-4" for="userId">ユーザーID</label>
+					<input type="text" th:field="*{userId}" class="form-control input-control">
+					<div class="text-danger"
+						 th:if="${#fields.hasErrors('userId')}"
+						 th:errors="*{userId}">
+					</div>
+				</div>
+				<!-- パスワード -->
+				<div class="form-group label mt-4 mb-2">
+					<label class="px-2 fs-4" for="password">パスワード</label>
+					<input type="password" th:field="*{password}" class="form-control input-control">
+					<div class="text-danger"
+						 th:if="${#fields.hasErrors('password')}"
+						 th:errors="*{password}">
+					</div>
+				</div>
+				<!-- ユーザー名 -->
+				<div class="form-group label mt-4">
+					<label class="px-2 fs-4" for="userName">ユーザー名</label>
+					<input type="text" th:field="*{userName}" class="form-control input-control">
+					<div class="text-danger"
+						 th:if="${#fields.hasErrors('userName')}"
+						 th:errors="*{userName}">
+					</div>
+				</div>
+				<input type="submit" value="登録" class="btn btn-primary mt-3 mb-2"><br>
+				<a th:href="@{/login}">ログインへ</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

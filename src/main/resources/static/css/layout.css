@@ -1,0 +1,25 @@
+.header {
+	padding-top: 1rem!important;
+	padding-bottom: 1.2rem!important;
+	margin-bottom: 1rem!important;
+}
+
+.text-deco {
+	text-decoration: none;
+}
+
+.login-wrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 80px;
+	text-align: center;
+}
+
+.label {
+	text-align: start;
+}
+
+.input-control {
+	height: 45px;
+	font-size: 18px;
+}

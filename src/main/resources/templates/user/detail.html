@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+<head>
+	<title>健康詳細</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="mt-5">
+			<h2 class="h2">健康診断詳細情報</h2>
+			<div class="d-flex justify-content-between">
+				<a th:href="@{/user/list}" class="btn btn-secondary">
+					一覧へ戻る
+				</a>
+				<a href="#" class="btn btn-primary">
+				新規登録
+				</a>
+			</div>
+			<table class="table table-bordered mt-3">
+				<tbody>
+					<tr>
+						<th class="table-light">ユーザーID</th>
+						<td th:text="${healthCheck.userId}"></td>
+					</tr>
+					
+					<tr>
+						<th class="table-light">健診日</th>
+						<td th:text="${healthCheck.checkDate}"></td>
+					</tr>
+					
+					<tr>
+						<th class="table-light">身長</th>
+						<td>
+							<span th:text="${healthCheck.height}"></span>
+							<span>cm</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<th class="table-light">体重</th>
+						<td>
+							<span th:text="${healthCheck.weight}"></span>
+							<span>kg</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<th class="table-light">BMI</th>
+						<td th:text="${healthCheck.bmi}"></td>
+					</tr>
+					
+					<tr>
+						<th class="table-light">最高血圧</th>
+						<td>
+							<span th:text="${healthCheck.systolicBloodPressure}"></span>
+							<span>mmHg</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<th class="table-light">最底血圧</th>
+						<td>
+							<span th:text="${healthCheck.diastolicBloodPressure}"></span>
+							<span>mmHg</span>
+						</td>
+					</tr>
+					
+					 <tr>
+            			<th class="table-light">診断結果</th>
+            			<td th:text="${healthCheck.result}"></td>
+        			</tr>
+				</tbody>
+			</table>
+			
+			<div class="d-flex gap-2 justify-content-center">
+				<a href="#" class="btn btn-primary">
+					編集
+				</a>
+				
+				<form action="#">
+					<button type="submit" class="btn btn-danger">
+						削除
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
