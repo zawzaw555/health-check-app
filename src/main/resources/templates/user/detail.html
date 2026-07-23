@@ -74,12 +74,19 @@
 			</table>
 			
 			<div class="d-flex gap-2 justify-content-center">
-				<a href="#" class="btn btn-primary">
+				<a th:href="@{/user/edit/{healthCheckId}
+									(healthCheckId=${healthCheck.healthCheckId})}" 
+									class="btn btn-primary">
 					編集
 				</a>
 				
-				<form action="#">
-					<button type="submit" class="btn btn-danger">
+				<form th:action="@{/user/delete}" method="post">
+					<input type="hidden" 
+							name="healthCheckId" 
+							th:value="${healthCheck.healthCheckId}">
+					<button type="submit" 
+							class="btn btn-danger"
+							onclick="return confirm('本当に削除しますか？')">
 						削除
 					</button>
 				</form>
