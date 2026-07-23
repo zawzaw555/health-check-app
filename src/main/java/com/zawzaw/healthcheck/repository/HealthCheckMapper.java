@@ -14,4 +14,9 @@ public interface HealthCheckMapper {
 	
 	HealthCheck selectHealthCheckById(
 			@Param("healthCheckId") Integer healthCheckId);
+	
+	int deleteHealthCheck(
+			@Param("healthCheckId") Integer healthCheckId);
+	
+	int updateHealthCheck(HealthCheck healthCheck);
 }

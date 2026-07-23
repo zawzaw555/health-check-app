@@ -2,6 +2,8 @@ package com.zawzaw.healthcheck.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -10,6 +12,8 @@ public class HealthCheck {
 	
 	private Integer healthCheckId;
 	private String userId;
+	
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate checkDate;
 	private String result;
 	

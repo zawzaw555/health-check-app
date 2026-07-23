@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+<head>
+	<title>健康編集</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="d-flex gap-2 justify-content-center mt-3">
+			<div class="card col-8 bg-light rounded-4">
+				<div class="cart-body m-4">
+					<form th:action="@{/user/edit}" 
+							method="post"
+							th:object="${healthCheck}">
+						<h2>健康診断編集</h2>
+						<input type="hidden"
+           						th:field="*{healthCheckId}">
+    					<input type="hidden"
+           						th:field="*{userId}">
+						<div class="form-group label mt-4">
+							<label class="px-2 fs-3" for="userId">ユーザーID</label>
+							<input type="text" 
+									class="form-control input-control"
+									id="userId"
+									th:field="*{userId}"
+									readonly>
+						</div>
+						<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="checkDate">健診日</label>
+        					<input type="date"
+       								id="checkDate"
+       								name="checkDate"
+       								class="form-control"
+               						th:field="*{checkDate}">
+    					</div>
+    					<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="height">身長</label>
+        					<input type="number"
+               						step="0.1"
+               						id="height"
+               						class="form-control"
+               						th:field="*{height}">
+    					</div>
+    					<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="weight">体重</label>
+        					<input type="number"
+               						step="0.1"
+               						id="weight"
+               						class="form-control"
+               						th:field="*{weight}">
+    					</div>
+
+    					<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="bmi">BMI</label>
+        					<input type="number"
+               							step="0.1"
+               							id="bmi"
+               							class="form-control"
+               							th:field="*{bmi}">
+    					</div>
+
+    					<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="systolicBloodPressure">最高血圧</label>
+        					<input type="number"
+               						id="systolicBloodPressure"
+               						class="form-control"
+               						th:field="*{systolicBloodPressure}">
+    					</div>
+
+    					<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="diastolicBloodPressure">最低血圧</label>
+        					<input type="number"
+               						id="diastolicBloodPressure"
+               						class="form-control"
+               						th:field="*{diastolicBloodPressure}">
+    					</div>
+
+    					<div class="form-group label mt-4">
+        					<label class="px-2 fs-3" for="result">診断結果</label>
+        					<input type="text"
+               						id="result"
+               						class="form-control"
+               						th:field="*{result}">
+    					</div>
+
+    					<div class="text-center mt-4">
+    						<a th:href="@{/user/list}" class="btn btn-secondary">
+								一覧へ戻る
+							</a>
+        					<button type="submit" class="btn btn-primary">
+            					更新
+        					</button>
+    					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

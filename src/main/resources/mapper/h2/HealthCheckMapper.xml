@@ -75,4 +75,21 @@
         health_check_id = #{healthCheckId}
 
 </select>
+<delete id="deleteHealthCheck">
+	DELETE FROM health_check
+	WHERE health_check_id = #{healthCheckId}
+</delete>
+<update id="updateHealthCheck">
+    UPDATE health_check
+    SET
+        check_date = #{checkDate},
+        result = #{result},
+        bmi = #{bmi},
+        height = #{height},
+        weight = #{weight},
+        systolic_blood_pressure = #{systolicBloodPressure},
+        diastolic_blood_pressure = #{diastolicBloodPressure}
+    WHERE
+        health_check_id = #{healthCheckId}
+</update>
 </mapper>
