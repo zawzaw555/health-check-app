@@ -28,6 +28,7 @@ public class ListController {
 		List<HealthCheck> healthCheckList = userService.getHealthCheckList(userId);
 		
 		model.addAttribute("healthCheckList", healthCheckList);
+	    model.addAttribute("userId",userId);
 		
 		return "user/list";
 	}

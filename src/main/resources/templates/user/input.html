@@ -10,7 +10,7 @@
 		<div class="d-flex gap-2 justify-content-center mt-3">
 			<div class="card col-8 bg-light rounded-4">
 				<div class="cart-body m-4">
-					<form th:action="@{/user/edit}" 
+					<form th:action="@{/user/input}" 
 							method="post"
 							th:object="${healthCheck}">
 						<h3>健康診断編集</h3>
@@ -64,13 +64,13 @@
                						class="form-control"
                						th:field="*{diastolicBloodPressure}">
     					</div>
-
+    					
     					<div class="text-center mt-4">
     						<a th:href="@{/user/list}" class="btn btn-secondary">
 								一覧へ戻る
 							</a>
         					<button type="submit" class="btn btn-primary">
-            					更新
+            					登録
         					</button>
     					</div>
 					</form>

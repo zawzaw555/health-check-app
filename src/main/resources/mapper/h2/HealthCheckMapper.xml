@@ -35,6 +35,33 @@
     		property="diastolicBloodPressure"/>
     </resultMap>
     
+    <insert id="insertHealthCheck"
+    		parameterType="com.zawzaw.healthcheck.model.HealthCheck"
+    		useGeneratedKeys="true"
+    		keyProperty="healthCheckId">
+    	
+    	INSERT INTO health_check (
+    		user_id,
+    		check_date,
+    		result,
+    		bmi,
+    		height,
+    		weight,
+    		systolic_blood_pressure,
+    		diastolic_blood_pressure
+    	)
+    	VALUES (
+    		#{userId},
+    		#{checkDate},
+    		#{result},
+    		#{bmi},
+    		#{height},
+    		#{weight},
+    		#{systolicBloodPressure},
+    		#{diastolicBloodPressure}
+    	)
+    </insert>
+    
     <select 
     	id="selectHealthCheckList"
     	resultMap="healthCheckMap">
