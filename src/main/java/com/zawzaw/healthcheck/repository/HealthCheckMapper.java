@@ -9,6 +9,9 @@ import com.zawzaw.healthcheck.model.HealthCheck;
 
 @Mapper
 public interface HealthCheckMapper {
+	
+	int insertHealthCheck(HealthCheck healthCheck);
+	
 	List<HealthCheck> selectHealthCheckList(
 			@Param("userId") String userId);
 	

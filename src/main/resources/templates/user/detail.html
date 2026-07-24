@@ -13,7 +13,7 @@
 				<a th:href="@{/user/list}" class="btn btn-secondary">
 					一覧へ戻る
 				</a>
-				<a href="#" class="btn btn-primary">
+				<a th:href="@{/user/input/{userId}(userId=${healthCheck.userId})}" class="btn btn-primary">
 				新規登録
 				</a>
 			</div>
