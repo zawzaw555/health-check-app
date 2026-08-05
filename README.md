@@ -17,8 +17,8 @@ Health Check management system を Spring Boot と MyBatis　で開発する。
  - Spring Boot
  - Thymeleaf
  - MyBatis
- - PostgreSQL
+ - H2 Database
  - Bootstrap
 
 ## Database
- - PostgreSQL
+ - H2
