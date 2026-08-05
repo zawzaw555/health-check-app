@@ -3,7 +3,7 @@
 	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout/layout}">
 <head>
-	<title>健康編集</title>
+	<title>健康登録</title>
 </head>
 <body>
 	<div layout:fragment="content">
@@ -13,7 +13,7 @@
 					<form th:action="@{/user/input}" 
 							method="post"
 							th:object="${healthCheck}">
-						<h3>健康診断編集</h3>
+						<h3>健康診断登録</h3>
 						<input type="hidden"
            						th:field="*{healthCheckId}">
 						<div class="form-group label mt-4">
